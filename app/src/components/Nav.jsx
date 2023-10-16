@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { ThemeDispatchContext } from "../contexts/ThemeContext";
 import { ThemeContext } from "../contexts/ThemeContext";
@@ -6,7 +7,6 @@ import { ThemeContext } from "../contexts/ThemeContext";
 const Nav = () => {
   const themeDispatch = useContext(ThemeDispatchContext);
   const themeContext = useContext(ThemeContext);
-  console.log(themeDispatch);
 
   function handleClick(mode) {
     console.log({ value: mode });
@@ -14,19 +14,21 @@ const Nav = () => {
   }
 
   return (
-    <nav class="container">
+    <nav className="container">
       <ul>
         <li>
-          <strong>context</strong>
+          <Link to="/">
+            <strong>context</strong>
+          </Link>
         </li>
       </ul>
       <ul>
-        {/* <li>
-          <a href="#">Link</a>
+        <li>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#">Link</a>
-        </li> */}
+          <Link to="/form">Form</Link>
+        </li>
         <li>
           <a href="" data-tooltip={themeContext.name} data-placement="left">
             <img

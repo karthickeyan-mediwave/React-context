@@ -3,14 +3,37 @@ import "../style.css";
 
 import Layout from "../components/Layout";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { ThemeDispatchContext } from "../contexts/ThemeContext";
 
 const IndexPage = () => {
   const themeContext = useContext(ThemeContext);
+  // const themeDispatch = useContext(ThemeDispatchContext);
 
+  // const listItems = themeContext.map(() => (
+  //   <li key={id}>role={themeContext.role}</li>
+  // ));
+  // const listItems = themeContext.map((element) => {
+  //   return (
+  //     <ul type="disc" className="item">
+  //       <li>{element.id}</li>
+  //       <li>{element.name}</li>
+
+  //       <li
+  //         style={{
+  //           fontWeight: "bold",
+  //           color: "blue",
+  //         }}
+  //       >
+  //         {element.Role}
+  //       </li>
+  //       <li>{element.learning}</li>
+  //     </ul>
+  //   );
+  // });
   return (
     <Layout title="react context ">
       <div>
-        <h2>user details </h2>
+        {/* <h2>user details </h2>
 
         <p>
           <a href="" data-tooltip={themeContext.name}>
@@ -20,6 +43,13 @@ const IndexPage = () => {
             />
           </a>
         </p>
+        <p>User Name: {themeContext.name}</p>
+
+        <button onClick={() => handleClick()}>get user data</button> */}
+        {/* <div>{listItems}</div> */}
+        <p>User Name: {themeContext.name}</p>
+        <p>User Role: {themeContext.Role}</p>
+        <p>User Learning: {themeContext.learning} </p>
       </div>
     </Layout>
   );
